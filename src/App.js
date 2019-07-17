@@ -1,13 +1,14 @@
 import React from 'react';
 //import style from'./App.module.css';
 import HeaderTop from './components/Header/HeaderTop/HeaderTop';
-import ImageContainer from './components/Images/ImageContainer';
+import HeaderBottom from './components/Header/HeaderBottom/HeaderBottom';
 
 function App(props) {
   return (
     <div >
       <HeaderTop />
-      <ImageContainer store = {props.store}/>
+      <HeaderBottom />
+    
     </div>
   );
 }

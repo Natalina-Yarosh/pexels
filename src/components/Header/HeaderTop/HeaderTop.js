@@ -6,7 +6,7 @@ import Input from '../../Input/Input';
 const HeaderTop = () => {
     return (
         <div className={style.headerTop}>
-            <div className={style.section}>
+            <div className={style.section}> 
                 <a href="https://www.pexels.com/" className={style.content}>
                     <svg
                         className={style.logo}

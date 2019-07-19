@@ -1,0 +1,41 @@
+.listDownloadPicture{
+    display: block;
+}
+
+.iconDownload{
+    background-color: #0d7e67; 
+    color: #fff;        
+    padding: 10px 12px;    
+    border-radius: 5px;
+    border:none;
+    font-size: 14px;
+}
+
+.listTitle{    
+    font-size: 16px;
+    line-height: 25px;      
+    font-weight: 600;     
+    color: #5e5e5e;
+    padding: 8px 16px;
+}
+
+.listAll{
+    margin-bottom: 10px;
+}
+
+.listAll>li:first-of-type{
+    border-top: 1px solid rgba(26,26,26,.1);
+}
+
+.listItem{        
+    font-size: 16px;    
+    font-weight: 300;  
+    color: #5e5e5e;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(26,26,26,.1);
+}
+
+.listItem:hover{
+    cursor: pointer;
+}

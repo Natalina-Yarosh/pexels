@@ -5,11 +5,11 @@ import Input from '../../Input/Input';
 
 const HeaderTop = () => {
     return (
-        <div className={style.headerTop}>
-            <div className={style.section}> 
-                <a href="https://www.pexels.com/" className={style.content}>
+        <header className={style.headerTop}>
+            <div className={style.section}>  
+                <a href="https://www.pexels.com/" className={style.content} title = 'Free Stock Photos'>
                     <svg
-                        className={style.logo}
+                        className={style.logo}                        
                         xmlns="http://www.w3.org/2000/svg"
                         width="32px"
                         height="32px"
@@ -24,11 +24,11 @@ const HeaderTop = () => {
                         fill="#fff"
                         />
                     </svg>
-                    <span className={style.logoText}>Pexels</span>
+                    <span className={style.logoText} >Pexels</span>
                 </a>
             </div>
             <Input />
-       </div>
+       </header>
     )
 }
 

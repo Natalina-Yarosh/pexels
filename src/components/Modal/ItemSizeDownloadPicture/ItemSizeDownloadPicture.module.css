@@ -11,6 +11,11 @@
     font-size: 14px;
 }
 
+.iconDownload:hover{
+    background-color: #05a081;
+    cursor: pointer;
+}
+
 .listTitle{    
     font-size: 16px;
     line-height: 25px;      

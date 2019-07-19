@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 const Input = () => {
     return(
         <div className = {style.wrapperSearch}>
-            <input className = {style.inputSearch} value = 'Search for free photos'></input>
+            <input className = {style.inputSearch} value = 'Search for free photos' title = 'Заполните это поле.'></input>
             <Button />
         </div>
     )

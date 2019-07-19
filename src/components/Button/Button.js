@@ -4,7 +4,7 @@ import style from './Button.module.css';
 const Button = () => {
     return(
         <div className = {style.wrapperButtonSearch}>
-            <button className = {style.buttonSearch}>
+            <button className = {style.buttonSearch} title = 'Search'>
                 <svg                    
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

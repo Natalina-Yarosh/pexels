@@ -5,7 +5,7 @@ import ItemSizeDownloadPicture from './ItemSizeDownloadPicture/ItemSizeDownloadP
 
 const Modal = () => {
     return(
-        <div className = {style.wrapper}>
+        <section className = {style.wrapper}>
            
             <div className = {style.sectionModal}>
                 <div>
@@ -29,12 +29,14 @@ const Modal = () => {
                         </button>
                        
                     </div>
-                    <ItemSizeDownloadPicture />
+                    <div className = {style.hoverSizeDownloadPicture}>
+                        <ItemSizeDownloadPicture />
+                    </div>
                 </div>
 
             </div>
 
-        </div>
+        </section>
     )
 }
 

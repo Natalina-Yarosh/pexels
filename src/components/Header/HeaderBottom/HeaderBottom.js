@@ -4,7 +4,7 @@ import Input from '../../Input/Input';
 
 const HeaderBottom = () => {
     return(
-        <div className={style.headerBottom}>
+        <section className={style.headerBottom}>
             <img 
                 className={style.img}
                 src="http://www.radionetplus.ru/uploads/posts/2013-04/1365401196_teplye-oboi-1.jpeg"
@@ -33,7 +33,7 @@ const HeaderBottom = () => {
             <div className = {style.subscribeHeaderButtom}>
                     <a href>Photo by Francesco Ungaro</a>
             </div>
-        </div>
+        </section>
 
     )
 }

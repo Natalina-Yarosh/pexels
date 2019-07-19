@@ -10,11 +10,11 @@ function App(props) {
     <div >
       <HeaderTop />
       <HeaderBottom />
-      <section className = {style.sectionContentPicturs}>
+      <main className = {style.sectionContentPicturs}>
         <Images />
         <Images />
         <Images />
-      </section>
+      </main>
       <Modal />
      
     </div>

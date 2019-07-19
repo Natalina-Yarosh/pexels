@@ -35,7 +35,7 @@ const ItemSizeDownloadPicture = () => {
                         
                         </ul>
                         
-                        <button className={style.iconDownload} >Free Download</button>
+                        <button className={style.iconDownload} > Free Download</button>
                     
             </form>
         </div>

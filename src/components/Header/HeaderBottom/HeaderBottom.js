@@ -2,14 +2,64 @@ import React from 'react';
 import style from './HeaderBottom.module.css';
 import Input from '../../Input/Input';
 
-const HeaderBottom = () => {
+class HeaderBottom extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: []
+      
+    };
+  }
+
+    componentDidMount(){
+
+        const query = 'background';
+
+        fetch(
+          `https://api.pexels.com/v1/search?query=${query}&per_page=80&page=1`,
+          {
+            headers: {
+              Authorization:
+                "563492ad6f917000010000014640aabb4e9d420cbe1c0df7daf4c2bf"
+            }
+          }
+        )
+            .then(response => {
+                return response.json();
+                 
+            })    
+            .then(response => {
+                this.setState({
+                    isLoaded: true,
+                    items: response.photos                   
+                });              
+                               
+            })   
+        }   
+
+    render(){
+        const {  items } = this.state;
+        let i =  Math.round( Math.random() * (items.length));
+        console.log(items);
+        
+        let bannerInfoPhoto =  items.find((item, index)  =>  index === i ? item : '')
+  
+            
+       
+       
     return(
         <section className={style.headerBottom}>
-            <img 
+                   
+            <img                         
                 className={style.img}
-                src="http://www.radionetplus.ru/uploads/posts/2013-04/1365401196_teplye-oboi-1.jpeg"
+                src={bannerInfoPhoto && bannerInfoPhoto.src.large2x}
                 alt=""
             />
+                   
+              
+            
             <div className={style.section}>
                 <div className = {style.contentHeaderBorrom}>
                     <h1 className = {style.title}>
@@ -31,11 +81,12 @@ const HeaderBottom = () => {
                 
             </div>
             <div className = {style.subscribeHeaderButtom}>
-                    <a href>Photo by Francesco Ungaro</a>
+                    <a href = {bannerInfoPhoto && bannerInfoPhoto.photographer_url}>Photo by {bannerInfoPhoto && bannerInfoPhoto.photographer}</a>
             </div>
         </section>
 
     )
+    }
 }
 
 export default HeaderBottom;

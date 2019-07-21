@@ -14,7 +14,8 @@
 
 .img{
     width: 100%;
-    height:500px;;
+    height: 500px;
+    object-fit: cover;
   
 }
 
@@ -60,11 +61,15 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 20px;
-    color: #fff;
-    opacity: .5;
-    font-size: 14px;
+    padding: 20px;    
+    opacity: .5;    
 }
+
+.subscribeHeaderButtom > a{
+    font-size: 14px;
+    color: #fff;
+}
+
 
 .subscribeHeaderButtom:hover{
     cursor: pointer;

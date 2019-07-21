@@ -22,19 +22,12 @@ class Images extends React.Component {
           })
           .then(data => {
             console.log(data.photos);
-          })
-        
-               
-           
-        
-    }
-
-    
+          })              
+             
+    }   
    
-    render (){        
-
+    render (){    
       
-        
         return(
           <section className={style.pictureItem}>
             <img className = {style.pictureItemSrc}

@@ -8,7 +8,12 @@ class HeaderBottom extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
+      staticListOffesPictures: ['house', 'hair', 'books', 'food', 'street', 'time', 'more', 
+        'background', 'mom', 'business', 'baby', 'happy', 'news', 'abstract', 'money', 'people',
+        'crowd', 'office', 'women', 'meeting', 'men', 'girl', 'fashion', 'man', 'person',    
+        'couple','eating', 'restaurant', 'dinner', 'drink', 'alcohol', 'beer', 'number', 'data',
+        'business', 'love', 'romantic', 'heart', 'summer', 'nature']
       
     };
   }
@@ -40,14 +45,28 @@ class HeaderBottom extends React.Component {
         }   
 
     render(){
-        const {  items } = this.state;
+        const {  items, staticListOffesPictures } = this.state;
         let i =  Math.round( Math.random() * (items.length));
         console.log(items);
         
         let bannerInfoPhoto =  items.find((item, index)  =>  index === i ? item : '')
-  
+        
+        
+        function compareRandom(a, b) {
+            return Math.random() - 0.5;
+        }
             
-       
+        staticListOffesPictures.sort(compareRandom);
+            
+        console.log(staticListOffesPictures)
+        let res = staticListOffesPictures.slice(0,7);
+        console.log(res)
+        // for(let k=0; k < 7; k++){
+        // let a =  Math.round( Math.random() * (staticListOffesPictures.length));
+        // console.log(staticListOffesPictures[a])          
+        // } 
+          
+        const listItems = res.map((number) =>   <li><a href>{number}</a></li> );
        
     return(
         <section className={style.headerBottom}>
@@ -68,13 +87,7 @@ class HeaderBottom extends React.Component {
                     <Input />
                     <div >
                         <ul className = {style.listSearch}><span>Suggested:</span>
-                            <li><a href = '/'>cat1</a></li>
-                            <li><a href = '/'>cat2</a></li>
-                            <li><a href = '/'>cat3</a></li>
-                            <li><a href = '/'>cat4</a></li>
-                            <li><a href = '/'>cat5</a></li>
-                            <li><a href = '/'>cat6</a></li>
-                            <li><a href = '/'>cat7</a></li>                            
+                            {listItems}                            
                         </ul>
                     </div>
                 </div>

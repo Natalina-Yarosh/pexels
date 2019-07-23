@@ -2,12 +2,13 @@ import React from 'react';
 import style from './HeaderTop.module.css';
 
 import Input from '../../Input/Input';
+import { NavLink } from 'react-router-dom';
 
 const HeaderTop = () => {
     return (
         <header className={style.headerTop}>
             <div className={style.section}>  
-                <a href="https://www.pexels.com/" className={style.content} title = 'Free Stock Photos'>
+                <NavLink to="/" className={style.content} title = 'Free Stock Photos'>
                     <svg
                         className={style.logo}                        
                         xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +26,7 @@ const HeaderTop = () => {
                         />
                     </svg>
                     <span className={style.logoText} >Pexels</span>
-                </a>
+                </NavLink>
             </div>
             <Input />
        </header>

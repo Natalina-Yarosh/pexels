@@ -1,20 +1,22 @@
 import React from 'react';
-import style from'./App.module.css';
+import { Route } from 'react-router-dom';
 import HeaderTop from './components/Header/HeaderTop/HeaderTop';
-import HeaderBottom from './components/Header/HeaderBottom/HeaderBottom';
-import Images from './components/Images/Image';
+import PageStart from './components/PageStart/PageStart';
+import PageSearch from './components/PageSearch/PageSearch';
 //import Modal from './components/Modal/Modal';
 
 function App(props) {
   return (
-    <div >
+    <div>
       <HeaderTop />
-      <HeaderBottom />
-      <main className = {style.sectionContentPicturs}>
-        <Images />
-        <Images />
-        <Images />
-      </main>
+      <Route exact path = '/' 
+            render = {() => <PageStart store = {props.store} />} />
+      <Route path = '/search/' 
+            render = {() => <PageSearch store = {props.store}/>} />    
+      
+      
+      
+     
       {/* <Modal /> */}
      
     </div>

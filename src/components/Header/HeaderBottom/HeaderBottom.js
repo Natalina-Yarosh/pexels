@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './HeaderBottom.module.css';
 import Input from '../../Input/Input';
+import { NavLink } from 'react-router-dom';
 
 class HeaderBottom extends React.Component {
     constructor(props) {
@@ -61,12 +62,9 @@ class HeaderBottom extends React.Component {
         console.log(staticListOffesPictures)
         let res = staticListOffesPictures.slice(0,7);
         console.log(res)
-        // for(let k=0; k < 7; k++){
-        // let a =  Math.round( Math.random() * (staticListOffesPictures.length));
-        // console.log(staticListOffesPictures[a])          
-        // } 
+        
           
-        const listItems = res.map((number) =>   <li><a href>{number}</a></li> );
+        const listItems = res.map((number) =>   <li><NavLink to= '/search'>{number}</NavLink></li> );
        
     return(
         <section className={style.headerBottom}>

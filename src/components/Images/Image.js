@@ -3,18 +3,26 @@ import style from './Image.module.css';
 //import * as axios from 'axios';
 
 
+
 class Images extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
       isLoaded: false,
-      items: [],      
+      items: [],   
+      query: props.value
     };
+   
   }
+  
+  
+  
     componentDidMount(){
-
-        const query = "dog";
+      // console.log(query);
+      //   const query = {props.value};
+      let {  query } = this.state;
+      console.log(query)
 
         fetch(
           `https://api.pexels.com/v1/search?query=${query}&per_page=80&page=1`,
@@ -38,6 +46,7 @@ class Images extends React.Component {
     }   
    
     render (){    
+   
       const {  items } = this.state;
 
       const listPictures = items.map((item) =>{
@@ -51,13 +60,13 @@ class Images extends React.Component {
           />
           <article className={style.userInfoWrapper}>
             <div>
-              <a href="/" className={style.userInfo}>
+              <a href = "/" className={style.userInfo} >
                 <img
                   className={style.img}
                   src={item.url}
                   alt=""
                 />
-                <span ><a href = {item.photographer_url} className={style.userName}>{item.photographer}</a></span>
+                <span ><a href = {item.photographer_url} className={style.userName} target = '_blank'>{item.photographer}</a></span>
               </a>
             </div>
             <button className={style.like}>

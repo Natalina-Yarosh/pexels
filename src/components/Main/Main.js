@@ -2,11 +2,11 @@ import React from 'react';
 import style from './Main.module.css';
 import Images from '../Images/Image';
 
-const Main = () => {
-    
+const Main = (props) => {
+    console.log(props.value)
     return(
       <main className = {style.sectionContentPicturs}>
-        <Images />
+        <Images value = {props.value}/>
         {/* <Images />
         <Images /> */}
       </main>

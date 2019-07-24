@@ -14,7 +14,9 @@ class HeaderBottom extends React.Component {
         'background', 'mom', 'business', 'baby', 'happy', 'news', 'abstract', 'money', 'people',
         'crowd', 'office', 'women', 'meeting', 'men', 'girl', 'fashion', 'man', 'person',    
         'couple','eating', 'restaurant', 'dinner', 'drink', 'alcohol', 'beer', 'number', 'data',
-        'business', 'love', 'romantic', 'heart', 'summer', 'nature']
+        'business', 'love', 'romantic', 'heart', 'summer', 'nature'],
+      value: props.value,
+      updateNewValueActionCreator: props.updateNewValueActionCreator
       
     };
   }
@@ -46,7 +48,7 @@ class HeaderBottom extends React.Component {
         }   
 
     render(){
-        const {  items, staticListOffesPictures } = this.state;
+        const {  items, staticListOffesPictures, value, updateNewValueActionCreator } = this.state;
         let i =  Math.round( Math.random() * (items.length));
         console.log(items);
         
@@ -64,7 +66,7 @@ class HeaderBottom extends React.Component {
         console.log(res)
         
           
-        const listItems = res.map((number) =>   <li><NavLink to= '/search'>{number}</NavLink></li> );
+        const listItems = res.map((number) =>   <li><NavLink to= '/search' target = '_blank'>{number}</NavLink></li> );
        
     return(
         <section className={style.headerBottom}>
@@ -82,7 +84,7 @@ class HeaderBottom extends React.Component {
                     <h1 className = {style.title}>
                     The best free stock photos & videos shared by talented creators.
                     </h1>
-                    <Input />
+                    <Input value = {value} updateNewValueActionCreator = {updateNewValueActionCreator}/>
                     <div >
                         <ul className = {style.listSearch}><span>Suggested:</span>
                             {listItems}                            
@@ -92,7 +94,7 @@ class HeaderBottom extends React.Component {
                 
             </div>
             <div className = {style.subscribeHeaderButtom}>
-                    <a href = {bannerInfoPhoto && bannerInfoPhoto.photographer_url}>Photo by {bannerInfoPhoto && bannerInfoPhoto.photographer}</a>
+                    <a href = {bannerInfoPhoto && bannerInfoPhoto.photographer_url} target = '_blank'>Photo by {bannerInfoPhoto && bannerInfoPhoto.photographer}</a>
             </div>
         </section>
 

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Button = (props) => {
     return(
         <div className = {style.wrapperButtonSearch}>
-             <NavLink to = '/search'>
+             <NavLink to = '/search' target = '_blank'>
                 <button onClick = {() => {alert(props.value)}} className = {style.buttonSearch} title = 'Search'>
             
                     <svg                    

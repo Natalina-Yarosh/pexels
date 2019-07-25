@@ -16,8 +16,8 @@ const PageSearch = (props) => {
                 updateNewValueActionCreator = {props.updateNewValueActionCreator} 
                 getPictureAction = {props.getPictureAction}
             />
-            <div className = {style.ContentSearch}>
-                <h2> Images {props.value} </h2>
+            <div className = {style.contentSearch}>
+                <h2 className = {style.resultSearch}> Images {props.value} </h2>
                 <Main 
                   value = {props.value}
                   items = {props.items}

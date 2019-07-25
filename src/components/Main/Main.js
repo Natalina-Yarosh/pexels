@@ -8,8 +8,7 @@ const Main = (props) => {
       <main className = {style.sectionContentPicturs}>
         <Images 
           value = {props.value}
-          items = {props.items}
-          getPictureAction = {props.getPictureAction}
+          
         />
         
       </main>

@@ -1,4 +1,10 @@
-.ContentSearch{
+.contentSearch{
     margin: 0 10px;
-    padding: 100px 0;
+    padding: 60px 0;
+}
+
+.resultSearch{
+    margin-bottom: 10px;
+    padding: 0 10px 
+
 }

@@ -4,7 +4,7 @@ import ItemSizeDownloadPicture from './ItemSizeDownloadPicture/ItemSizeDownloadP
 
 
 const Modal = (props) => {
-    console.log(props.children)
+    console.log(props.params)
     return(
         <section className = {style.wrapper}>
            
@@ -21,7 +21,7 @@ const Modal = (props) => {
                             
                         <div className = {style.iconDownload}>
                             <span>
-                                Free Download 
+                                Free Download  
                             </span>
                         </div>                    
                         

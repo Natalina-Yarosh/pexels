@@ -18,7 +18,7 @@ const HeaderBottom = ({  items,  value, getPictureAction, updateNewValueActionCr
     
     let i =  Math.round( Math.random() * (items.length));
             
-    let bannerInfoPhoto =  items.find((item, index)  =>  index === i ? item : '')        
+    let bannerInfoPhoto =  items.find((item, index)  =>  index === i ? (index < items.length-1 ? `${item},` : item) :'')        
         
     function compareRandom(a, b) {
         return Math.random() - 0.5;
@@ -28,7 +28,7 @@ const HeaderBottom = ({  items,  value, getPictureAction, updateNewValueActionCr
             
     let res = staticListOffesPictures.slice(0,7)
     
-    const listItems = res.map((number) =>  <li><NavLink to= '/search/' >{number}</NavLink></li> );
+    const listItems = res.map((number) =>  <li><NavLink to= {`/search/${number}`} className = {style.listItem}>{number}</NavLink></li> );
        
     return(
         <section className={style.headerBottom}>

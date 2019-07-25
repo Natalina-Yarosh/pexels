@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Main.module.css';
 import Images from '../Images/Image';
 
+
 const Main = (props) => {
     
     return(

@@ -3,17 +3,18 @@ import style from './Image.module.css';
 import { connect } from 'react-redux';
 import {getPictures} from '../../redux/getPicturesReducer';
 import {NavLink} from 'react-router-dom';
+//import {Masonry} from 'react-masonry';
  
-const Images = ({value,  getPictureAction, items}) => { 
+const Images = ({value,  getPictureAction, items, props}) => { 
     
     const [query] = useState(value);
       useEffect(() => { 
       getPictureAction(query);
       
     }, [getPictureAction, query]);
-  
+    console.log( props)
     const listPictures = items.map((item) =>{
-
+      
       return (
           
         <div className = {style.contentPicture}>
@@ -22,7 +23,7 @@ const Images = ({value,  getPictureAction, items}) => {
                 src={item.src.original}
                 alt=""
                 key = {item.id}
-              />
+                />
             </NavLink>
             <article className={style.userInfoWrapper}>
               <div>
@@ -65,7 +66,7 @@ const Images = ({value,  getPictureAction, items}) => {
       
     return( 
       <section className={style.pictureItem}>
-        {listPictures}
+        {listPictures}       
       </section>
     )
 

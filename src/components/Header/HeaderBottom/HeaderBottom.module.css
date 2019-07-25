@@ -1,6 +1,7 @@
 .headerBottom{
     position: relative;
     margin-bottom: 10px;
+    line-height: 0;
 }
 
 .headerBottom::before{
@@ -11,6 +12,7 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.2) 100%),linear-gradient(180deg,rgba(0,0,0,0.2) 0%,transparent 100%);
+    
 }
 
 .img{
@@ -46,13 +48,16 @@
     font-size: 13px;
 }
 
-.listSearch > li > a{
+.listItem{
     color:#fff;    
     margin: 0 10px;
-    opacity: .5;
+    opacity: .7;
+    position: relative;
 }
 
-.listSearch > li > a:hover{
+
+
+.listItem:hover{
     cursor: pointer;
     opacity: 1;
 }

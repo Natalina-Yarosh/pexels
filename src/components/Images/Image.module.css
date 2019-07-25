@@ -1,19 +1,20 @@
 
 .pictureItem {      
   
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
-    grid-gap: 10px;
+    width: 1200px;
+    margin: 20px auto;
+    columns: 3;
+    column-gap: 20px
 }
 
 .contentPicture{
-    width: 100%;
-    height: auto;    
+    width: 100%; 
+    margin: 0 0 20px;
     
-    display: inline-block;
+    overflow: hidden;    
     position: relative;
+    line-height: 1;
+    break-inside: avoid;
 }
 
 .contentPicture:hover .userInfoWrapper{    
@@ -21,9 +22,9 @@
 } 
 
 .pictureItemSrc{
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    z-index:0;
+   
     
 }
   
@@ -89,3 +90,21 @@
     fill: #e74c3c;
 }
   
+
+@media (max-width:1200px)
+{    
+    .pictureItem {     
+        columns: 2;
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+        
+        
+    }
+}
+
+@media (max-width:768px)
+{    
+    .pictureItem {       
+        columns: 1;              
+    }
+}

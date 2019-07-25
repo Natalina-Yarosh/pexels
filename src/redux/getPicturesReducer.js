@@ -5,7 +5,7 @@ export const GET_PICTURES_FAIL = "GET_PICTURES_FAIL";
 const initialState = {
     data: [],
     error: null,
-    //query: 'dog'
+    
   };
   
 const getPicturesReducer = (state = initialState, action) => {

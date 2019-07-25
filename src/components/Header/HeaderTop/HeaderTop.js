@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './HeaderTop.module.css';
-
 import Input from '../../Input/Input';
 import { NavLink } from 'react-router-dom';
 
@@ -29,7 +28,11 @@ const HeaderTop = (props) => {
                     <span className={style.logoText} >Pexels</span>
                 </NavLink>
             </div>
-            <Input value = {props.value} updateNewValueActionCreator = {props.updateNewValueActionCreator}/>
+            <Input 
+                value = {props.value} 
+                updateNewValueActionCreator = {props.updateNewValueActionCreator}
+                getPictureAction = {props.getPictureAction}
+            />
        </header>
     )
 }

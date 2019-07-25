@@ -3,13 +3,16 @@ import  style from './Modal.module.css';
 import ItemSizeDownloadPicture from './ItemSizeDownloadPicture/ItemSizeDownloadPicture';
 
 
-const Modal = () => {
+const Modal = (props) => {
+    console.log(props.children)
     return(
         <section className = {style.wrapper}>
            
             <div className = {style.sectionModal}>
                 <div>
-                    <img  className = {style.pictupeClose} src = 'https://www.tradeoakbuildingkits.com/wp-content/plugins/portfolio-filter-gallery-premium/img/x-close-icon-white.png' alt  = '' />
+                    <a href = '/'>
+                        <img  className = {style.pictupeClose} src = 'https://www.tradeoakbuildingkits.com/wp-content/plugins/portfolio-filter-gallery-premium/img/x-close-icon-white.png' alt  = '' />
+                    </a>
                 </div>
                 <img className = {style.pictureModal} src = 'https://www.imgonline.com.ua/examples/bee-on-daisy.jpg' alt=''/>
                 <div className = {style.blockDownload}>

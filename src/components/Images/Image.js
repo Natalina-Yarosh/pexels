@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import style from './Image.module.css';
 import { connect } from 'react-redux';
 import {getPictures} from '../../redux/getPicturesReducer';
-
-const Images = ({ getPictureAction, items }) => { 
-    const [query] = useState('cat');
-      useEffect(() => {
+import {NavLink} from 'react-router-dom';
+ 
+const Images = ({value,  getPictureAction, items}) => { 
+    
+    const [query] = useState(value);
+      useEffect(() => { 
       getPictureAction(query);
+      
     }, [getPictureAction, query]);
   
     const listPictures = items.map((item) =>{
@@ -14,11 +17,13 @@ const Images = ({ getPictureAction, items }) => {
       return (
           
         <div className = {style.contentPicture}>
-              
-            <img className = {style.pictureItemSrc}
-              src={item.src.original}
-              alt=""
-            />
+            <NavLink to = {`/modal/${item.id}`} >
+              <img className = {style.pictureItemSrc}
+                src={item.src.original}
+                alt=""
+                key = {item.id}
+              />
+            </NavLink>
             <article className={style.userInfoWrapper}>
               <div>
                 <a href = "/" className={style.userInfo} >
@@ -69,13 +74,14 @@ const Images = ({ getPictureAction, items }) => {
 const mapStateToProps = state => {
   console.log(state)
   return {
-    items: state.getPictures.data
+    items: state.getPictures.data,
+    value: state.valuePictures.value   
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getPictureAction: page => dispatch(getPictures(page))
+    getPictureAction: query => dispatch(getPictures(query))
   };
 };
 

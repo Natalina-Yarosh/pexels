@@ -1,5 +1,6 @@
 .headerBottom{
     position: relative;
+    margin-bottom: 10px;
 }
 
 .headerBottom::before{

@@ -4,26 +4,35 @@ import HeaderTop from '../Header/HeaderTop/HeaderTop';
 import Main from "../Main/Main";
 import { connect } from 'react-redux';
 import {updateNewValueActionCreator} from '../../redux/valuePicturesReducer';
+import {getPictures} from '../../redux/getPicturesReducer';
 
 
 const PageSearch = (props) => {   
-  console.log(props.value)
-  console.log(props.updateNewValueActionCreator) 
+  
     return(
         <>
-            <HeaderTop value = {props.value} updateNewValueActionCreator = {props.updateNewValueActionCreator}/>
+            <HeaderTop 
+                value = {props.value} 
+                updateNewValueActionCreator = {props.updateNewValueActionCreator} 
+                getPictureAction = {props.getPictureAction}
+            />
             <div className = {style.ContentSearch}>
-                <h2>{props.value}</h2>
-                <Main value = {props.value}/>                 
+                <h2> Images {props.value} </h2>
+                <Main 
+                  value = {props.value}
+                  items = {props.items}
+                  getPictureAction = {props.getPictureAction}
+                />                 
           </div>    
         </>  
     )
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  
     return {
-      value: state.valuePictures.value  
+      value: state.valuePictures.value,
+      items: state.getPictures.data   
     }
 }
   
@@ -31,7 +40,8 @@ const mapDispatchToProps = (dispatch) => {
     return{
         updateNewValueActionCreator: (value) => {       
         dispatch(updateNewValueActionCreator(value))
-      }
+      },
+      getPictureAction: query => dispatch(getPictures(query))
     }
 }
   

@@ -3,16 +3,16 @@ import style from './Image.module.css';
 import { connect } from 'react-redux';
 import {getPictures} from '../../redux/getPicturesReducer';
 import {NavLink} from 'react-router-dom';
-//import {Masonry} from 'react-masonry';
+
  
-const Images = ({value,  getPictureAction, items, props}) => { 
-    
+const Images = ({value,  getPictureAction, items}) => { 
+  
     const [query] = useState(value);
       useEffect(() => { 
       getPictureAction(query);
       
     }, [getPictureAction, query]);
-    console.log( props)
+    
     const listPictures = items.map((item) =>{
       
       return (

@@ -38,7 +38,7 @@ const Button = ({ value, getPictureAction}) => {
     return(
         <WrapperButtonSearch>
              <NavLink to = '/search/:value'
-            //  {{path:'search', query:{value}}} 
+            
              >
                 <ButtonSearch onClick = {getPictureSearch} title = 'Search'>            
                     <Svg                    

@@ -1,10 +1,11 @@
 import React from 'react';
 import  style from './Modal.module.css';
 import ItemSizeDownloadPicture from './ItemSizeDownloadPicture/ItemSizeDownloadPicture';
-
+import { connect } from 'react-redux';
+import {getPictures} from '../../redux/getPicturesReducer';
 
 const Modal = (props) => {
-    console.log(props.params)
+    console.log(props)
     return(
         <section className = {style.wrapper}>
            
@@ -43,4 +44,17 @@ const Modal = (props) => {
     )
 }
 
-export default Modal;
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+      items: state.getPictures.data 
+    };
+  };
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+      getPictureAction: query => dispatch(getPictures(query))
+    };
+  };
+  
+export default connect( mapStateToProps, mapDispatchToProps)(Modal);

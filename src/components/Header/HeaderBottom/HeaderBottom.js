@@ -3,18 +3,17 @@ import style from './HeaderBottom.module.css';
 import Input from '../../Input/Input';
 import { NavLink } from 'react-router-dom';
 
-const HeaderBottom = ({  items,  value, getPictureAction, updateNewValueActionCreator }) => {
+const HeaderBottom = ({ staticListOffesPictures, items,  value, getPictureAction, updateNewValueActionCreator }) => {
     
-    const  staticListOffesPictures = ['house', 'hair', 'books', 'food', 'street', 'time', 'more', 
-        'background', 'mom', 'business', 'baby', 'happy', 'news', 'abstract', 'money', 'people',
-        'crowd', 'office', 'women', 'meeting', 'men', 'girl', 'fashion', 'man', 'person',    
-        'couple','eating', 'restaurant', 'dinner', 'drink', 'alcohol', 'beer', 'number', 'data',
-        'business', 'love', 'romantic', 'heart', 'summer', 'nature']
+    console.log(items)
 
     const [query] = useState('background');
-        useEffect(() => { 
+
+    useEffect(() => { 
         getPictureAction(query);    
     }, [getPictureAction, query]);
+
+    console.log(items)
     
     let i =  Math.round( Math.random() * (items.length));
             
@@ -28,8 +27,8 @@ const HeaderBottom = ({  items,  value, getPictureAction, updateNewValueActionCr
             
     let res = staticListOffesPictures.slice(0,7)
     
-    const listItems = res.map((number) =>  <li><NavLink to= {`/search/${number}`} className = {style.listItem}>{number}</NavLink></li> );
-       
+    const listItems = res.map((number) =>  <li key = {number}><NavLink to= {`/search/${number}`} className = {style.listItem}>{number}</NavLink></li> );
+     
     return(
         <section className={style.headerBottom}>
                    
@@ -42,7 +41,7 @@ const HeaderBottom = ({  items,  value, getPictureAction, updateNewValueActionCr
             <div className={style.section}>
                 <div className = {style.contentHeaderBorrom}>
                     <h1 className = {style.title}>
-                    The best free stock photos & videos shared by talented creators.
+                        The best free stock photos & videos shared by talented creators.
                     </h1>
                     <Input 
                         value = {value} 
@@ -58,7 +57,13 @@ const HeaderBottom = ({  items,  value, getPictureAction, updateNewValueActionCr
                 
             </div>
             <div className = {style.subscribeHeaderButtom}>
-                    <a href = {bannerInfoPhoto && bannerInfoPhoto.photographer_url} target = '_blank'>Photo by {bannerInfoPhoto && bannerInfoPhoto.photographer}</a>
+                    <a 
+                        href = {bannerInfoPhoto && bannerInfoPhoto.photographer_url} 
+                        target = '_blank' 
+                        rel="noreferrer noopener"
+                    >
+                        Photo by {bannerInfoPhoto && bannerInfoPhoto.photographer}
+                    </a>
             </div>
         </section>
 

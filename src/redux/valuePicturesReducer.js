@@ -1,7 +1,12 @@
 const UPDATE_NEW_VALUE_TEXT = 'UPDATE-NEW-VALUE-TEXT';
 
 let initialState = {  
-    value: 'Search ' 
+    value: 'Search ' ,
+    staticListOffesPictures: ['house', 'hair', 'books', 'food', 'street', 'time', 'more', 
+        'background', 'mom', 'business', 'baby', 'happy', 'news', 'abstract', 'money', 'people',
+        'crowd', 'office', 'women', 'meeting', 'men', 'girl', 'fashion', 'man', 'person',    
+        'couple','eating', 'restaurant', 'dinner', 'drink', 'alcohol', 'beer', 'number', 'data',
+        'business', 'love', 'romantic', 'heart', 'summer', 'nature']
 }
 
 

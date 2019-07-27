@@ -9,7 +9,7 @@ const Main = (props) => {
       <main className = {style.sectionContentPicturs}>
         <Images 
           value = {props.value}
-          
+         
         />
         
       </main>

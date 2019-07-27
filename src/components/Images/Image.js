@@ -6,35 +6,44 @@ import {NavLink} from 'react-router-dom';
 
  
 const Images = ({value,  getPictureAction, items}) => { 
-  
+    
     const [query] = useState(value);
-      useEffect(() => { 
-      getPictureAction(query);
-      
+
+    useEffect(() => { 
+      getPictureAction(query);      
     }, [getPictureAction, query]);
     
     const listPictures = items.map((item) =>{
       
       return (
           
-        <div className = {style.contentPicture}>
+        <div className = {style.contentPicture} key = {item.id}>
             <NavLink to = {`/modal/${item.id}`} >
               <img className = {style.pictureItemSrc}
-                src={item.src.original}
+                src={item.src.large}
                 alt=""
-                key = {item.id}
+                
                 />
             </NavLink>
             <article className={style.userInfoWrapper}>
               <div>
-                <a href = "/" className={style.userInfo} >
+                <NavLink to = "/" className={style.userInfo} >
                   <img
                     className={style.img}
                     src={item.url}
                     alt=""
                   />
-                  <span ><a href = {item.photographer_url} className={style.userName} target = '_blank'>{item.photographer}</a></span>
-                </a>
+                  <span >
+                          <a 
+                            href = {item.photographer_url} 
+                            className={style.userName} 
+                            target = '_blank'
+                            rel="noreferrer noopener"
+                          >
+                            {item.photographer}
+                          </a>
+                  </span>
+                </NavLink>
               </div>
               <button className={style.like}>
                 <svg

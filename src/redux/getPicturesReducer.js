@@ -13,7 +13,7 @@ const getPicturesReducer = (state = initialState, action) => {
       case GET_PICTURES_SUCCESS: {
         return {
           ...state,
-          data: [...state.data, ...action.payload]
+          data: action.payload
         };
       }
       case GET_PICTURES_FAIL: {

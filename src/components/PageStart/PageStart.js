@@ -19,8 +19,10 @@ const PageStart= (props) => {
                 updateNewValueActionCreator = {props.updateNewValueActionCreator} 
                 items = {props.items}
                 getPictureAction = {props.getPictureAction}
+                staticListOffesPictures = {props.staticListOffesPictures}
             />
             <Main 
+                text = 'pictures'
                 value = {props.value} 
                 items = {props.items}
                 getPictureAction = {props.getPictureAction}
@@ -32,7 +34,8 @@ const PageStart= (props) => {
 const mapStateToProps = (state) => {   
       return {
         value: state.valuePictures.value,
-        items: state.getPictures.data  
+        items: state.getPictures.data ,
+        staticListOffesPictures: state.valuePictures.staticListOffesPictures
       }
       
   }

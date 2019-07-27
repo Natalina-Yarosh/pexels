@@ -27,7 +27,8 @@ const Svg = styled.svg`
 const Button = ({ value, getPictureAction}) => {   
     
     const [ query, setQuery] = useState(value);
-      useEffect(() => {    
+
+    useEffect(() => {    
       getPictureAction(query);      
     }, [getPictureAction, query])
     
@@ -37,7 +38,7 @@ const Button = ({ value, getPictureAction}) => {
 
     return(
         <WrapperButtonSearch>
-             <NavLink to = '/search/:value'
+             <NavLink to = {`/search/${value}`}
             
              >
                 <ButtonSearch onClick = {getPictureSearch} title = 'Search'>            

@@ -12,7 +12,7 @@ function App(props) {
       <Route path = '/search/' 
             render = {() => <PageSearch store = {props.store}/>} />  
       <Route path = {'/modal/:id'} 
-            render = {(props) => <Modal store = {props.store}/>} />    
+            render = {() => <Modal store = {props.store}/>} />    
           
     </HashRouter>
   );

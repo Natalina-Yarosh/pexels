@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import style from './Input.module.css';
+//import style from './Input.module.css';
 import Button from '../Button/Button';
 import { connect } from 'react-redux';
 import {updateNewValueActionCreator} from '../../redux/valuePicturesReducer';
@@ -33,33 +33,38 @@ const InputSearch = styled.input`
 
 const Input = ({ value,  getPictureAction, updateNewValueActionCreator}) => {
     const [query, setQuery] = useState();
-      useEffect(() => {
-      getPictureAction(query);
-    }, [setQuery, getPictureAction, query]);
+
+    useEffect(() => {
+      getPictureAction(query);      
+      updateNewValueActionCreator(query)
+    }, [ getPictureAction, updateNewValueActionCreator, query]);
      
     const search = useStaticCallback(() => {
         setQuery(value)
      }, [value, setQuery])
      
-     useEffect(() => {
-     document.addEventListener('keypress', search);
      
+     useEffect(() => {
+        
+        document.addEventListener('keypress', search);
+        
         return () => {
         document.removeEventListener('keypress', search);
+        
         }
      
      },[search])
-
-    let onNewValuesChange = (e) => {
-        let value = e.target.value ;
-        updateNewValueActionCreator(value);
-    }
-
+        
+    // let onNewValuesChange = (e) => {       
+    //     let text = e.target.value ;
+    //     updateNewValueActionCreator(text);
+    // }  
+   
     return(
         <WrapperSearch>
             <InputSearch                
                 value = {value}   
-                onChange = {onNewValuesChange}                
+                //onChange = {onNewValuesChange}               
                 title = 'Заполните это поле.'
             ></InputSearch>
             <Button                 

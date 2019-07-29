@@ -1,7 +1,7 @@
 const UPDATE_NEW_VALUE_TEXT = 'UPDATE-NEW-VALUE-TEXT';
 
-let initialState = {  
-    value: 'Search ' ,
+export let initialState = {  
+    value: '' ,
     staticListOffesPictures: ['house', 'hair', 'books', 'food', 'street', 'time', 'more', 
         'background', 'mom', 'business', 'baby', 'happy', 'news', 'abstract', 'money', 'people',
         'crowd', 'office', 'women', 'meeting', 'men', 'girl', 'fashion', 'man', 'person',    
@@ -30,4 +30,5 @@ export const  updateNewValueActionCreator = (value) => {
 }
 
 export default valuePicturesReducer;
+
 

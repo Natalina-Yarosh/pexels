@@ -1,7 +1,7 @@
-import React,  { useEffect, useState } from "react";
+import React from "react";
 //import style from './Button.module.css';
 import { NavLink } from 'react-router-dom';
-import {getPictures} from '../../redux/getPicturesReducer';
+//import {getPictures} from '../../redux/getPicturesReducer';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
@@ -24,21 +24,15 @@ const Svg = styled.svg`
 `;
 
 
-const Button = ({ value, getPictureAction}) => {   
+const Button = ({ value, getPictureAction, updateNewValueActionCreator, input}) => {   
     
-    const [ query, setQuery] = useState(value);
-
-    useEffect(() => {    
-      getPictureAction(query);      
-    }, [getPictureAction, query])
-    
-    let getPictureSearch = () => {         
-        setQuery(value)
+    let getPictureSearch = () => {
+        updateNewValueActionCreator(input)
     }
 
     return(
         <WrapperButtonSearch>
-             <NavLink to = {`/search/${value}`}
+             <NavLink to = {`/search/${input}`}
             
              >
                 <ButtonSearch onClick = {getPictureSearch} title = 'Search'>            
@@ -60,12 +54,7 @@ const mapStateToProps = (state) => {
       value: state.valuePictures.value       
     }    
 }
+
   
-const mapDispatchToProps = (dispatch) => {    
-    return{       
-        getPictureAction: query => dispatch(getPictures(query))
-    }
-}
-  
-export default connect(mapStateToProps, mapDispatchToProps)(Button);
+export default connect(mapStateToProps)(Button);
 

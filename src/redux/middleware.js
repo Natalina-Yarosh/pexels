@@ -5,7 +5,7 @@ const pictureMiddleware = state => next => async action => {
   if (action.type === GET_PICTURES) {
         try {
             const stream = await fetch(        
-                `https://api.pexels.com/v1/search?query=${action.payload}&per_page=80&page=1`,
+                `https://api.pexels.com/v1/search?query=${action.payload || "background"}&per_page=80&page=1`,
                 {
                 headers: {
                     Authorization:

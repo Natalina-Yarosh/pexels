@@ -6,16 +6,30 @@ import {getPictures} from '../../redux/getPicturesReducer';
 
 const Modal = (props) => {
     console.log(props)
+    let a = props.match.params.id
+    console.log(a)
+    let res = props.items.filter(item => item.id == a)
+    console.log(res)
+    console.log(res[0].src)
+   
     return(
         <section className = {style.wrapper}>
            
             <div className = {style.sectionModal}>
                 <div>
                     <a href = '/'>
-                        <img  className = {style.pictupeClose} src = 'https://www.tradeoakbuildingkits.com/wp-content/plugins/portfolio-filter-gallery-premium/img/x-close-icon-white.png' alt  = '' />
+                        <img  
+                            className = {style.pictupeClose} 
+                            src = 'https://www.tradeoakbuildingkits.com/wp-content/plugins/portfolio-filter-gallery-premium/img/x-close-icon-white.png' 
+                            alt  = '' 
+                            />
                     </a>
                 </div>
-                <img className = {style.pictureModal} src = 'https://www.imgonline.com.ua/examples/bee-on-daisy.jpg' alt=''/>
+                <img 
+                   className = {style.pictureModal} 
+                   src = {res[0].src.large}
+                   alt=''
+                />
                 <div className = {style.blockDownload}>
 
                     <div className = {style.contenDownloadButton}>

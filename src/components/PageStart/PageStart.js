@@ -7,6 +7,7 @@ import {updateNewValueActionCreator} from '../../redux/valuePicturesReducer';
 import {getPictures} from '../../redux/getPicturesReducer';
 
 const PageStart= (props) => {
+    props.updateNewValueActionCreator("");
     return(
         <div>
             <HeaderTop 

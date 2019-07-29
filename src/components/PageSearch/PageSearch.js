@@ -8,7 +8,7 @@ import {getPictures} from '../../redux/getPicturesReducer';
 
 
 const PageSearch = (props) => {   
-    console.log(props)
+
     return(
         <>
             <HeaderTop 

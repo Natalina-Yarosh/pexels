@@ -8,11 +8,11 @@ function App(props) {
   return (
     <HashRouter>   
       <Route exact path = '/' 
-            render = {() => <PageStart store = {props.store} />} />
+            render = {(props) => <PageStart {...props} />} />
       <Route path = '/search/' 
-            render = {() => <PageSearch store = {props.store}/>} />  
+            render = {(props) => <PageSearch {...props}/>} />  
       <Route path = {'/modal/:id'} 
-            render = {() => <Modal store = {props.store}/>} />    
+            render = {(props) => <Modal {...props}/>} />    
           
     </HashRouter>
   );

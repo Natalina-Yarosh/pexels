@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from './HeaderBottom.module.css';
 import Input from '../../Input/Input';
 import { NavLink } from 'react-router-dom';
 
 const HeaderBottom = ({ staticListOffesPictures, items,  value, getPictureAction, updateNewValueActionCreator }) => {
-    
-    console.log(items)
 
-    const [query] = useState('background');
-
-    useEffect(() => { 
-        getPictureAction(query);    
-    }, [getPictureAction, query]);
-
-    console.log(items)
+    let getPictureSearch = (name) => {
+        updateNewValueActionCreator(name);
+    }
     
     let i =  Math.round( Math.random() * (items.length));
             
@@ -27,7 +21,7 @@ const HeaderBottom = ({ staticListOffesPictures, items,  value, getPictureAction
             
     let res = staticListOffesPictures.slice(0,7)
     
-    const listItems = res.map((number) =>  <li key = {number}><NavLink to= {`/search/${number}`} className = {style.listItem}>{number}</NavLink></li> );
+    const listItems = res.map((number) =>  <li key = {number}><NavLink to= {`/search/${number}`} onClick={() => getPictureSearch(number)} className = {style.listItem}>{number}</NavLink></li> );
      
     return(
         <section className={style.headerBottom}>
@@ -47,6 +41,7 @@ const HeaderBottom = ({ staticListOffesPictures, items,  value, getPictureAction
                         value = {value} 
                         updateNewValueActionCreator = {updateNewValueActionCreator}
                         getPictureAction = {getPictureAction}
+                        getPictureSearch={getPictureSearch}
                     />
                     <div >
                         <ul className = {style.listSearch}><span>Suggested:</span>

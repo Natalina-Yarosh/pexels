@@ -23,8 +23,8 @@
 }
 
 .pictureModal{   
-    width: 60%;
-    height: auto;     
+    max-width: 60%;
+    max-height: 50%;     
 }
 
 .contenDownloadButton{

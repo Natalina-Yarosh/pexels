@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import style from './Image.module.css';
 import { connect } from 'react-redux';
 import {getPictures} from '../../redux/getPicturesReducer';
@@ -6,13 +6,10 @@ import {NavLink} from 'react-router-dom';
 
  
 const Images = ({value,  getPictureAction, items}) => { 
-    
-    const [query] = useState(value);
+    useEffect(() => {    
+      getPictureAction(value);      
+    }, [value])
 
-    useEffect(() => { 
-      getPictureAction(query);      
-    }, [getPictureAction, query]);
-    
     const listPictures = items.map((item) =>{
       
       return (
@@ -82,7 +79,6 @@ const Images = ({value,  getPictureAction, items}) => {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     items: state.getPictures.data,
     value: state.valuePictures.value   

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 //import style from './Input.module.css';
 import Button from '../Button/Button';
 import { connect } from 'react-redux';
 import {updateNewValueActionCreator} from '../../redux/valuePicturesReducer';
-import {getPictures} from '../../redux/getPicturesReducer';
-import useStaticCallback from '../../redux/useStaticCallback';
+//import {getPictures} from '../../redux/getPicturesReducer';
+//import useStaticCallback from '../../redux/useStaticCallback';
 import styled from 'styled-components';
 
 const WrapperSearch = styled.div`
@@ -28,48 +28,40 @@ const InputSearch = styled.input`
         color: #000;
 
     }
+    ::-webkit-input-placeholder { color: #f6f6f6 !important; }
+    :-ms-input-placeholder { color: #f6f6f6 !important; }
+    ::-ms-input-placeholder { color: #f6f6f6 !important; }
+    ::placeholder { color: #f6f6f6 !important; }
 `;
 
 
 const Input = ({ value,  getPictureAction, updateNewValueActionCreator}) => {
     const [query, setQuery] = useState();
-
-    useEffect(() => {
-      getPictureAction(query);      
-      updateNewValueActionCreator(query)
-    }, [ getPictureAction, updateNewValueActionCreator, query]);
+    const [input, setInput] = useState(value);
      
-    const search = useStaticCallback(() => {
-        setQuery(value)
-     }, [value, setQuery])
-     
-     
-     useEffect(() => {
-        
-        document.addEventListener('keypress', search);
-        
-        return () => {
-        document.removeEventListener('keypress', search);
-        
+    const handleKeyPress = (input, e) => {
+        setInput(e.target.value);
+        if(e.key == 'Enter') {
+            window.location.href = `/search/${input}`
+            setTimeout((e) =>  updateNewValueActionCreator(input), 0)
         }
-     
-     },[search])
         
-    // let onNewValuesChange = (e) => {       
-    //     let text = e.target.value ;
-    //     updateNewValueActionCreator(text);
-    // }  
-   
+    }
+
     return(
         <WrapperSearch>
             <InputSearch                
-                value = {value}   
-                //onChange = {onNewValuesChange}               
+                value = {input || value}   
+                onChange = {(e) => setInput(e.target.value)}
+                onKeyPress={(e) => handleKeyPress(input,e)}        
                 title = 'Заполните это поле.'
+                placeholder="Search for free photos"
             ></InputSearch>
             <Button                 
-                value = {value} 
-                getPictureAction = {getPictureAction} 
+                value = {input} 
+                input={input}
+                getPictureAction = {getPictureAction}
+                updateNewValueActionCreator={updateNewValueActionCreator}
             />
         </WrapperSearch>
     ) 
@@ -83,10 +75,9 @@ const mapStateToProps = (state) => {
   
 const mapDispatchToProps = (dispatch) => {    
     return{
-        updateNewValueActionCreator: (value) => {       
-        dispatch(updateNewValueActionCreator(value))
-        },
-        getPictureAction: query => dispatch(getPictures(query))
+        updateNewValueActionCreator: (input) => {       
+        dispatch(updateNewValueActionCreator(input))
+        }
     }
 }
   

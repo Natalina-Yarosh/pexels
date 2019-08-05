@@ -18,7 +18,7 @@ const valuePicturesReducer = (state = initialState, action) => {
                 value: action.value
             };            
         }
-        default:
+        default: 
             return state;
     }
 }  

@@ -1,35 +1,42 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState  } from "react";
 import style from './Image.module.css';
 import { connect } from 'react-redux';
 import {getPictures} from '../../redux/getPicturesReducer';
-import {NavLink} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
+import Modal from './../Modal/Modal';
 
  
-const Images = ({value,  getPictureAction, items}) => { 
+const Images = ({value,  getPictureAction, items, }) => { 
     useEffect(() => {    
       getPictureAction(value);      
     }, [value])
 
+    const [changeModal, setChangeModal] = useState(false)
+    console.log(changeModal);
+    
+    const [modalId, setModalId] = useState(null)
+
+    let changeView = (e, id)=> {
+      setModalId(id)
+      setChangeModal(changeModal => !changeModal)  
+         
+    }   
+   
+
     const listPictures = items.map((item) =>{
-      
+     
       return (
           
-        <div className = {style.contentPicture} key = {item.id}>
-            <NavLink to = {`/modal/${item.id}`} >
+        <div className = {style.contentPicture} key = {item.id} id = {item.id}>        
+              
               <img className = {style.pictureItemSrc}
                 src={item.src.large}
                 alt=""
-                
+                onClick = {(e) => changeView(e, item.id)}
                 />
-            </NavLink>
+            
             <article className={style.userInfoWrapper}>
-              <div>
-                <NavLink to = "/" className={style.userInfo} >
-                  <img
-                    className={style.img}
-                    src={item.url}
-                    alt=""
-                  />
+              <div>                
                   <span >
                           <a 
                             href = {item.photographer_url} 
@@ -40,7 +47,7 @@ const Images = ({value,  getPictureAction, items}) => {
                             {item.photographer}
                           </a>
                   </span>
-                </NavLink>
+            
               </div>
               <button className={style.like}>
                 <svg
@@ -63,15 +70,14 @@ const Images = ({value,  getPictureAction, items}) => {
                   <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                 </svg>
               </button>
-            </article>
-            
+            </article>            
         </div>
-          
       )
     } );
       
     return( 
       <section className={style.pictureItem}>
+      { changeModal && <Modal changeView = {changeView} modalId = {modalId}/> }
         {listPictures}       
       </section>
     )
@@ -81,7 +87,8 @@ const Images = ({value,  getPictureAction, items}) => {
 const mapStateToProps = state => {
   return {
     items: state.getPictures.data,
-    value: state.valuePictures.value   
+    value: state.valuePictures.value
+    
   };
 };
 

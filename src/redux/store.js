@@ -3,6 +3,7 @@ import valuePicturesReducer from './valuePicturesReducer';
 import getPicturesReducer from './getPicturesReducer';
 import pictureMiddleware from './middleware';
 
+
 let reducers = combineReducers({
     valuePictures: valuePicturesReducer,
     getPictures: getPicturesReducer

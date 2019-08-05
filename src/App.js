@@ -9,7 +9,7 @@ function App(props) {
     <HashRouter>   
       <Route exact path = '/' 
             render = {(props) => <PageStart {...props} />} />
-      <Route path = '/search/' 
+      <Route   path = '/search/' 
             render = {(props) => <PageSearch {...props}/>} />  
       <Route path = {'/modal/:id'} 
             render = {(props) => <Modal {...props}/>} />    

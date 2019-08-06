@@ -2,7 +2,6 @@ import React, { useEffect, useState  } from "react";
 import style from './Image.module.css';
 import { connect } from 'react-redux';
 import {getPictures} from '../../redux/getPicturesReducer';
-//import {Link} from 'react-router-dom';
 import Modal from './../Modal/Modal';
 
  

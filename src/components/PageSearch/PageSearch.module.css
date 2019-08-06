@@ -1,10 +1,19 @@
 .contentSearch{
     margin: 0 10px;
-    padding: 60px 0;
+    padding: 70px 0;
 }
 
 .resultSearch{
-    margin-bottom: 10px;
-    padding: 0 10px 
-
+    margin-left: 30px ;
+    font-size: 20px;
 }
+
+.resultSearchNumber{
+    margin: 20px 0 0 30px ;
+    padding-bottom: 5px;
+    font-size: 16px;
+    color:  #232a34; 
+    border-bottom: 2px solid #0d7e67; 
+    display: inline-block;
+}
+

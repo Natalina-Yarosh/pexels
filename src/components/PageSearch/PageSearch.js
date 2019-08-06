@@ -9,6 +9,8 @@ import {getPictures} from '../../redux/getPicturesReducer';
 
 const PageSearch = (props) => {   
 
+  console.log(props.items.length)
+
     return(
         <>
             <HeaderTop 
@@ -17,7 +19,12 @@ const PageSearch = (props) => {
                 getPictureAction = {props.getPictureAction}
             />
             <div className = {style.contentSearch}>
-                <h2 className = {style.resultSearch}> Images {props.value} </h2>
+                <h2 className = {style.resultSearch}>
+                    Images {props.value}                     
+                  </h2>
+                <h2 className = {style.resultSearchNumber}> 
+                     {props.items.length}  photos
+                  </h2>
                 <Main 
                   value = {props.value}
                   items = {props.items}

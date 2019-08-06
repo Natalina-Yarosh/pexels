@@ -32,9 +32,7 @@ const Button = ({ value, getPictureAction, updateNewValueActionCreator, input}) 
 
     return(
         <WrapperButtonSearch>
-             <NavLink to = {`/search/${input}`}
-            
-             >
+             <NavLink to = {`/search/${input}`} >
                 <ButtonSearch onClick = {getPictureSearch} title = 'Search'>            
                     <Svg                    
                         xmlns="http://www.w3.org/2000/svg"

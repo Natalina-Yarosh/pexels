@@ -3,12 +3,16 @@
 }
 
 .iconDownload{
+    font-size: 16px;         
+    font-weight: 600; 
     background-color: #0d7e67; 
     color: #fff;        
     padding: 10px 12px;    
     border-radius: 5px;
     border:none;
     font-size: 14px;
+    display: block;
+    margin: 0 auto;
 }
 
 .iconDownload:hover{
@@ -17,11 +21,11 @@
 }
 
 .listTitle{    
-    font-size: 16px;
-    line-height: 25px;      
+    font-size: 18px;         
     font-weight: 600;     
     color: #5e5e5e;
-    padding: 8px 16px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .listAll{
@@ -44,3 +48,47 @@
 .listItem:hover{
     cursor: pointer;
 }
+
+.customRadio input[type="radio"]{
+    position: absolute;
+    right: -500px;
+}
+
+.customRadio label{
+    position: relative; 
+    padding-left: 30px;
+    cursor: pointer   
+}
+
+.customRadio input[type="radio"]+label::before{
+    content: '';
+    background: #fff;
+    border: 2px solid #0d7e67;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.customRadio input[type="radio"]+label::after{
+    content: '';
+    background: #0d7e67;    
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    opacity: 0;
+    transform: scale(2);
+    transition: transform 0.3s linear, opacity 0.3s linear;
+}
+
+
+.customRadio input[type="radio"]:checked + label::after{
+    opacity: 1;
+    transform: scale(1);
+}
+

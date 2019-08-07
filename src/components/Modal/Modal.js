@@ -17,13 +17,9 @@ const WrapperModal = styled.section`
     display:block 
 `;
 
-const Modal = (props) => {   
-    
-    console.log(props)    
+const Modal = (props) => {    
+      
     let resultIdRender = props.items.filter(item => item.id == props.modalId)
-    console.log(resultIdRender)
-    console.log(resultIdRender[0].src)
- 
     
     return(        
         <WrapperModal >        
@@ -52,8 +48,7 @@ const Modal = (props) => {
 const mapStateToProps = state => {
     console.log(state)
     return {
-      items: state.getPictures.data,
-     
+      items: state.getPictures.data     
     };
   };
   

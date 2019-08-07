@@ -1,7 +1,5 @@
 import React from "react";
-//import style from './Button.module.css';
 import { NavLink } from 'react-router-dom';
-//import {getPictures} from '../../redux/getPicturesReducer';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 

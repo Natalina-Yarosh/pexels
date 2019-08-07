@@ -1,18 +1,14 @@
 import React, {  useState } from "react";
-//import style from './Input.module.css';
 import Button from '../Button/Button';
 import { connect } from 'react-redux';
 import {updateNewValueActionCreator} from '../../redux/valuePicturesReducer';
-//import {getPictures} from '../../redux/getPicturesReducer';
-//import useStaticCallback from '../../redux/useStaticCallback';
 import styled from 'styled-components';
 
 const WrapperSearch = styled.div`
     background: rgba(255,255,255,.25);
     display: flex;
     align-items: center;
-    border-radius: 2px;
-    
+    border-radius: 2px;    
 `;
 
 const InputSearch = styled.input`
@@ -25,13 +21,8 @@ const InputSearch = styled.input`
     width: calc(100% - 10px)!important;
     :focus{
         background: rgba(255,255,255,1);
-        color: #000;
-
+        color: #000
     }
-    ::-webkit-input-placeholder { color: #f6f6f6 !important; }
-    :-ms-input-placeholder { color: #f6f6f6 !important; }
-    ::-ms-input-placeholder { color: #f6f6f6 !important; }
-    ::placeholder { color: #f6f6f6 !important; }
 `;
 
 
@@ -42,7 +33,7 @@ const Input = ({ value,  getPictureAction, updateNewValueActionCreator}) => {
     const handleKeyPress = (input, e) => {
         setInput(e.target.value);
         if(e.key == 'Enter') {
-            window.location.href = `/search/${input}`
+            window.location.hash = `/search/${input}`
             setTimeout((e) =>  updateNewValueActionCreator(input), 0)
         }
         

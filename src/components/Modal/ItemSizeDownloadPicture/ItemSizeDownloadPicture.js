@@ -3,9 +3,7 @@ import style from './ItemSizeDownloadPicture.module.css';
 import download from 'downloadjs';
 
 const ItemSizeDownloadPicture = ({resultIdRender}) => {
-   
-    console.log(resultIdRender)
-
+  
     const [changeSize, setChangeSize] = useState()
 
     const chekedSize = (e) => {

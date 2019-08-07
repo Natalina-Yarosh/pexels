@@ -8,10 +8,8 @@ const Main = (props) => {
     return(
       <main className = {style.sectionContentPicturs}>
         <Images 
-          value = {props.value}
-         
-        />
-        
+          value = {props.value}         
+        />        
       </main>
     )
     

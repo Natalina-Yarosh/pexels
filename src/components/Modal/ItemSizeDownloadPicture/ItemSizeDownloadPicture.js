@@ -26,7 +26,7 @@ const ItemSizeDownloadPicture = ({resultIdRender}) => {
                             <input name = 'picture' type="radio"  value='original'  id='sizeOriginal' 
                                 onChange = {(e) => {chekedSize(e)}}/>
                             <label for = 'sizeOriginal'>   
-                                <span className = {style.itemName}><strong>Original</strong> (5040 x 3360)</span>
+                                <span className = {style.itemName}><strong>Original</strong></span>
                             </label>              
                         </li>
 
@@ -34,7 +34,7 @@ const ItemSizeDownloadPicture = ({resultIdRender}) => {
                             <input name = 'picture' type="radio" value='large' id = 'sizeLarge'
                                 onChange = {(e) => {chekedSize(e)}} />
                             <label for = 'sizeLarge'>  
-                                <span className = {style.itemName}><strong>Large</strong> (1920 x 1280)</span>
+                                <span className = {style.itemName}><strong>Large</strong></span>
                             </label> 
                         </li>
 
@@ -42,7 +42,7 @@ const ItemSizeDownloadPicture = ({resultIdRender}) => {
                             <input name = 'picture' type="radio" value='medium' id = 'sizeMedium'
                                 onChange = {(e) => {chekedSize(e)}}/>
                             <label for = 'sizeMedium'> 
-                                <span className = {style.itemName}><strong>Medium</strong> (1280 x 853)</span>
+                                <span className = {style.itemName}><strong>Medium</strong></span>
                             </label>
                         </li>
 
@@ -50,7 +50,7 @@ const ItemSizeDownloadPicture = ({resultIdRender}) => {
                             <input name = 'picture'  type="radio" value='small' id = 'sizeSmall'
                                 onChange = {(e) => {chekedSize(e)}} />
                             <label for = 'sizeSmall'> 
-                                <span className = {style.itemName}><strong>Small</strong> (640 x 426)</span>
+                                <span className = {style.itemName}><strong>Small</strong></span>
                             </label>
                         </li>
                         

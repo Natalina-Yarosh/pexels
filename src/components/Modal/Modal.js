@@ -21,12 +21,16 @@ const Modal = (props) => {
       
     let resultIdRender = props.items.filter(item => item.id == props.modalId)
     
+    function onClick (){
+      props.changeView()
+    }
+
     return(        
         <WrapperModal >        
             <div className = {style.sectionModal}>
                 <div>                    
                         <img  
-                            onClick = {(e) => props.changeView()}
+                            onClick = {onClick}
                             className = {style.pictupeClose} 
                             src = 'https://www.tradeoakbuildingkits.com/wp-content/plugins/portfolio-filter-gallery-premium/img/x-close-icon-white.png' 
                             alt  = '' 

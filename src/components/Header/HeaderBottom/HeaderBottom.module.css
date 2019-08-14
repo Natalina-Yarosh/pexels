@@ -48,7 +48,7 @@
     font-size: 13px;
 }
 
-.listItem{
+.renderItem{
     color:#fff;    
     margin: 0 10px;
     opacity: .7;
@@ -57,7 +57,7 @@
 
 
 
-.listItem:hover{
+.renderItem:hover{
     cursor: pointer;
     opacity: 1;
 }

@@ -8,7 +8,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Roboto",
     monospace;
 }
 
@@ -19,4 +19,5 @@ code {
   box-sizing: border-box;
   list-style-type: none;
   line-height: 1;
+  
 }

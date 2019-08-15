@@ -3,19 +3,6 @@ import  style from './Modal.module.css';
 import ItemSizeDownloadPicture from './ItemSizeDownloadPicture/ItemSizeDownloadPicture';
 import { connect } from 'react-redux';
 import {getPictures} from '../../redux/getPicturesReducer';
-import styled from 'styled-components';
-
-const WrapperModal = styled.section`
-    position: fixed;
-    top:0;
-    left:0;
-    background-color: rgba(12,15,19,.8);
-    padding: 30px;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    display:block 
-`;
 
 const Modal = (props) => {    
       
@@ -26,7 +13,7 @@ const Modal = (props) => {
     }
 
     return(        
-        <WrapperModal >        
+        <section  className = {style.wrapperModal}>        
             <div className = {style.sectionModal}>
                 <div>                    
                         <img  
@@ -45,15 +32,14 @@ const Modal = (props) => {
             
             </div>
 
-        </WrapperModal>
+        </section>
     )
 }
 
-const mapStateToProps = state => {
-    console.log(state)
+const mapStateToProps = state => {    
     return {
       items: state.getPictures.data     
-    };
+    }
   };
   
   const mapDispatchToProps = dispatch => {

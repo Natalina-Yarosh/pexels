@@ -29,6 +29,7 @@ const HeaderTop = (props) => {
                 </NavLink>
             </div>
             <Input 
+                className={style.displayInput} 
                 value = {props.value} 
                 updateNewValueActionCreator = {props.updateNewValueActionCreator}
                 getPictureAction = {props.getPictureAction}

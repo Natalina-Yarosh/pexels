@@ -5,7 +5,8 @@ import Main from "../Main/Main";
 import { connect } from 'react-redux';
 import {updateNewValueActionCreator} from '../../redux/valuePicturesReducer';
 import {getPictures} from '../../redux/getPicturesReducer';
-
+import notFound from '../../assets/notFound2.png';
+import { NavLink } from 'react-router-dom';
 
 const PageSearch = (props) => {   
 
@@ -23,11 +24,23 @@ const PageSearch = (props) => {
                 <h2 className = {style.resultSearchNumber}> 
                      {props.items.length}  photos
                   </h2>
-                <Main 
-                  value = {props.value}
-                  items = {props.items}
-                  getPictureAction = {props.getPictureAction}
-                />                 
+                {props.items.length === 0 
+                  ? 
+                    <div className = {style.notFoundMain}>
+                      
+                      <img src = {notFound} alt = '' className = {style.notFoundImage} />
+                      <span className = {style.notFoundAnimation}>
+                        <NavLink to = '/' className = {style.notFoundText} >Back to the main page</NavLink>
+                      </span>
+                      
+                    </div> 
+                  :
+                    <Main 
+                      value = {props.value}
+                      items = {props.items}
+                      getPictureAction = {props.getPictureAction}
+                    />   
+                 }             
           </div>    
         </>  
     )

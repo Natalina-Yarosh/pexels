@@ -52,7 +52,7 @@ const HeaderBottom = ({ staticListOffesPictures, items,  value, getPictureAction
             <div className={style.section}>
                 <div className = {style.contentHeaderBorrom}>
                     <h1 className = {style.title}>
-                        The best free stock photos & videos shared by talented creators.
+                        The best free stock photos shared by talented creators.
                     </h1>
                     <Input 
                         value = {value} 

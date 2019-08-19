@@ -13,7 +13,9 @@ const pictureMiddleware = state => next => async action => {
                     }
                 }
             )    
-            const { photos: items } = await stream.json();                
+              
+            const { photos: items } = await stream.json(); 
+                   
             state.dispatch(getPicturesSuccess(items));
         } catch (error) {
             state.dispatch(getPicturesFail(error));

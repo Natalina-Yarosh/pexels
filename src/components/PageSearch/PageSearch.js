@@ -21,9 +21,9 @@ const PageSearch = (props) => {
                 <h2 className = {style.resultSearch}>
                     Images {props.value}                     
                   </h2>
-                <h2 className = {style.resultSearchNumber}> 
+                {/* <h2 className = {style.resultSearchNumber}> 
                      {props.items.length}  photos
-                  </h2>
+                  </h2> */}
                 {props.items.length === 0 
                   ? 
                     <div className = {style.notFoundMain}>

@@ -2,7 +2,7 @@
 ##### https://natalina-yarosh.github.io/pexels/#/
 
 
-> This application helps who is looking for an image to find great photos that you can adn download use everywhere for free.
+> This application helps who is looking for an image to find great photos that you can download and use them everywhere for free.
 > It has been built with the help of API. Here you can find the link to it: https://www.pexels.com/api/
 
 #### The application has been coded using the following technologies:

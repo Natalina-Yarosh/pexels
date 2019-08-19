@@ -2,7 +2,7 @@
   "name": "pexels",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://Natalina-Yarosh.github.io/pexels",
+  "homepage":"https://natalina-yarosh.github.io/pexels",
   "dependencies": {
     "axios": "^0.19.0",
     "classnames": "^2.2.6",

@@ -13,9 +13,9 @@
  - Redux
 
 #### Now I am working on bringing my application to the next level, namely:
- - Добавить индикатор загрузки изображений.
- - Реализация мультиязычности сайта.
- - Создание раздела собственной коллекции изображений. 
+ - Adding indicator of image loading.
+ - Actualization of multilingual website. 
+ - Partition creation of private image gallery. 
 
 
 ### Steps for Pexels Application installation:
